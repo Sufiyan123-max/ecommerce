@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { GiShoppingBag } from 'react-icons/gi';
 import { LuNotebookText } from 'react-icons/lu';
@@ -76,7 +76,7 @@ const Cart = ({location, getLocation}) => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/delivery-info', {
+      const response = await fetch('https://ecommerce-97pd.onrender.com/api/delivery-info', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ const Cart = ({location, getLocation}) => {
         status: 'pending'
       };
 
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch('https://ecommerce-97pd.onrender.com/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

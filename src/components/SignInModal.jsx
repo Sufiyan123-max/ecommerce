@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { toast } from 'react-toastify';
 
@@ -16,7 +16,7 @@ const SignInModal = ({ isOpen, onClose, onSignIn }) => {
     setLoading(true);
 
     try {
-      const endpoint = isSignUp ? 'http://localhost:5000/api/auth/signup' : 'http://localhost:5000/api/auth/signin';
+      const endpoint = isSignUp ? 'https://ecommerce-97pd.onrender.com/api/auth/signup' : 'https://ecommerce-97pd.onrender.com/api/auth/signin';
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {

@@ -21,13 +21,13 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch('https://ecommerce-97pd.onrender.com/api/contact', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(formData),
+});
 
       const data = await response.json();
 

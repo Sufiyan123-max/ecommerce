@@ -9,11 +9,23 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// Middleware
+const cors = require("cors");
+
+app.use(cors({
+  origin: "*",   // allow all domains
+  methods: ["GET","POST","PUT","DELETE","PATCH"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sufi', {
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/sufi';
+const maskedUri = mongoUri.replace(/(mongodb\+srv:\/\/)(.*@)/, '$1****@');
+console.log('Connecting to MongoDB at:', maskedUri);
+
+mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
