@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 // Middleware
-const cors = require("cors");
+
 
 app.use(cors({
   origin: "*",   // allow all domains
